@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pacote Essence | Do Luxo à Mesa</title>
+  <title>Pacote Supreme | Do Luxo à Mesa</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    /* copia daqui as mesmas variáveis, body, header, footer e container
-       que já tens no index (podes literalmente copiar e colar) */
-
     :root {
       --bg-main: #f3e8dd;
       --bg-card: #f0e2d3;
@@ -41,6 +38,7 @@
       padding:0 24px;
     }
 
+    /* HEADER */
     .site-header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -83,8 +81,26 @@
 
     .main-nav a:hover::after { width:100%; }
 
-    /* CONTEÚDO DO PACOTE */
+    /* BOTÃO HAMBURGUER */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      gap: 5px;
+    }
 
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 2px;
+      background: #7b5531;
+      transition: all 0.3s ease;
+    }
+
+    /* CONTEÚDO DO PACOTE */
     .package-hero {
       margin-top:90px;
       padding:70px 0 40px;
@@ -138,62 +154,76 @@
       cursor:pointer;
     }
 
-footer {
-  background-color: #f3e8dd;
-  padding: 20px 0 15px;
-  text-align: center;
-}
+    /* FOOTER */
+    footer {
+      background-color: #f3e8dd;
+      padding: 20px 0 15px;
+      text-align: center;
+    }
 
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px; /* menor distância entre texto e ícones */
-}
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
 
-footer p {
-  color: #795e46;
-  font-size: 14px;
-  margin: 0;
-}
+    footer p {
+      color: #795e46;
+      font-size: 14px;
+      margin: 0;
+    }
 
-.footer-links {
-  display: inline-flex; /* garante alinhamento central */
-  justify-content: center;
-  align-items: center;
-  gap: 12px; /* espaço entre ícones */
-  line-height: 0; /* remove espaços verticais extras */
-}
+    .footer-links {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      line-height: 0;
+    }
 
-footer a img {
-  display: block;
-  width: 60px;
-  height: auto;
-  transition: transform 0.3s ease-in-out;
-}
+    footer a img {
+      display: block;
+      width: 60px;
+      height: auto;
+      transition: transform 0.3s ease-in-out;
+    }
 
-footer a img:hover {
-  transform: scale(1.12);
-}
+    footer a img:hover {
+      transform: scale(1.12);
+    }
 
-/* Ajuste individual dos ícones */
-footer a img[src*="logo_wpp"] {
-  width: 80px; /* ligeiro aumento */
-}
+    footer a img[src*="logo_wpp"] {
+      width: 80px;
+    }
 
-footer a[href*="instagram"] img {
-  width: 49px;
-}
+    footer a[href*="instagram"] img {
+      width: 49px;
+    }
 
-
-
-footer p {
-  color: #795e46;
-  font-size: 14px;
-}
-
+    /* RESPONSIVO */
     @media (max-width:900px) {
+      .main-nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #f7efe6;
+        flex-direction: column;
+        gap: 16px;
+        padding: 12px 20px 16px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        display: none;
+      }
+
+      .main-nav.is-open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
       .package-layout {
         grid-template-columns:1fr;
       }
@@ -206,6 +236,13 @@ footer p {
       <div class="logo">
         <a href="index.html"><img src="logo.png" alt="Do Luxo à Mesa"></a>
       </div>
+
+      <button class="menu-toggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <nav class="main-nav">
         <a href="index.html">Início</a>
         <a href="quem somos.html">Quem somos</a>
@@ -225,38 +262,53 @@ footer p {
     <div class="container package-layout">
       <div class="package-text">
         <h2>O que está incluído</h2>
-        <p>• Buffet com <strong>300 peças de finger food gourmet</strong>, pensado para eventos intimistas.</p>
+        <p>• Buffet com <strong>300 peças de finger food gourmet</strong>, pensado para eventos de médio porte.</p>
         <p>• Louça premium decorativa, com a paleta suave e dourada da Do Luxo à Mesa.</p>
         <p>• Montagem e disposição do buffet em mesa de 360 cm, com foco em elegância e equilíbrio visual.</p>
-        <p>• Ideal para celebrações de 35 convidados, como aniversários, jantares especiais e mini-eventos familiares.</p>
+        <p>• Inclui bebidas de jarro e harmonização estética completa.</p>
 
         <a href="index.html" class="btn-voltar">Voltar aos serviços</a>
       </div>
 
       <div class="package-image">
-        <img src="imgs/pacote-essence.jpg" alt="Buffet Pacote Essence">
+        <img src="pacote-supreme.jpg" alt="Buffet Pacote Supreme">
       </div>
     </div>
   </section>
 
   <footer class="footer">
-      <div class="footer-content">
-        <p>&copy; 2025 Do Luxo á Mesa.</p>
-        <div class="footer-links">
-          <a href="https://www.facebook.com/profile.php?id=61582963936354" target="_blank">
-            <img src="logo_wpp.png" alt="WhatsApp" class="social-icon" />
-          </a>
-          <a href="https://www.instagram.com/doluxoamesa/" target="_blank">
-            <img src="logo_insta.png" alt="Instagram" class="social-icon" />
-          </a>
-        </div>
+    <div class="footer-content">
+      <p>&copy; <span id="year"></span> Do Luxo á Mesa.</p>
+      <div class="footer-links">
+        <a href="https://www.facebook.com/profile.php?id=61582963936354" target="_blank">
+          <img src="logo_wpp.png" alt="WhatsApp" class="social-icon" />
+        </a>
+        <a href="https://www.instagram.com/doluxoamesa/" target="_blank">
+          <img src="logo_insta.png" alt="Instagram" class="social-icon" />
+        </a>
       </div>
-    </footer>
+    </div>
+  </footer>
 
   <script>
+    // ano automático
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // menu hamburguer
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
+
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener("click", () => {
+        mainNav.classList.toggle("is-open");
+      });
+
+      mainNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          mainNav.classList.remove("is-open");
+        });
+      });
+    }
   </script>
 </body>
 </html>
-
-
