@@ -224,31 +224,53 @@
 
     /* FOOTER */
     footer {
-      background-color: #f3e8dd;
-      padding: 20px 0 15px;
-      text-align: center;
-    }
+  background-color: #f3e8dd;
+  padding: 20px 0 15px;
+  text-align: center;
+}
 
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-    }
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
 
-    .footer-links {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-    }
+footer p {
+  color: #795e46;
+  font-size: 14px;
+  margin: 0;
+}
 
-    footer a img {
-      width: 60px;
-      transition: transform 0.3s ease-in-out;
-    }
+.footer-links {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  line-height: 0;
+}
 
-    footer a img:hover { transform: scale(1.12); }
+footer a img {
+  display: block;
+  width: 60px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+footer a img:hover {
+  transform: scale(1.12);
+}
+
+/* tamanhos específicos */
+footer a img[src*="logo_wpp"] {
+  width: 80px;
+}
+
+footer a[href*="instagram"] img {
+  width: 49px;
+}
+
 
     /* RESPONSIVO */
     @media (max-width: 900px) {
@@ -398,3 +420,4 @@
   </script>
 </body>
 </html>
+
