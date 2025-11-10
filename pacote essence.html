@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pacote Essence | Do Luxo à Mesa</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* copia daqui as mesmas variáveis, body, header, footer e container
+       que já tens no index (podes literalmente copiar e colar) */
+
+    :root {
+      --bg-main: #f3e8dd;
+      --bg-card: #f0e2d3;
+      --gold: #c9a44e;
+      --gold-dark: #a58335;
+      --text-main: #5a4023;
+      --white: #ffffff;
+      --btn-bg: #7d5324;
+      --btn-bg-hover: #5c3e1b;
+    }
+
+    * { box-sizing: border-box; margin:0; padding:0; }
+
+    body {
+      font-family: "Nunito", sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a { text-decoration:none; color:inherit; }
+    img { max-width:100%; display:block; }
+
+    .container {
+      width:100%;
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 24px;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 10;
+      background: linear-gradient(to bottom, #f7efe6 0%, #f3e8dd 100%);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .header-inner {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 24px;
+    }
+
+    .logo img { height:130px; }
+
+    .main-nav {
+      display:flex;
+      gap:32px;
+      font-size:15px;
+    }
+
+    .main-nav a {
+      position:relative;
+      font-weight:500;
+      color:#7b5531;
+    }
+
+    .main-nav a::after {
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-4px;
+      width:0;
+      height:1px;
+      background:var(--gold);
+      transition:width 0.2s ease;
+    }
+
+    .main-nav a:hover::after { width:100%; }
+
+    /* CONTEÚDO DO PACOTE */
+
+    .package-hero {
+      margin-top:90px;
+      padding:70px 0 40px;
+      text-align:center;
+    }
+
+    .package-hero h1 {
+      font-family:"Playfair Display", serif;
+      font-size:2.6rem;
+      margin-bottom:10px;
+    }
+
+    .package-hero .price {
+      font-size:1rem;
+      color:var(--gold-dark);
+      font-weight:600;
+    }
+
+    .package-layout {
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap:50px;
+      padding:0 0 80px;
+    }
+
+    .package-text h2 {
+      font-family:"Playfair Display", serif;
+      font-size:1.6rem;
+      margin-bottom:16px;
+    }
+
+    .package-text p {
+      margin-bottom:14px;
+      font-size:14px;
+    }
+
+    .package-image img {
+      border-radius:12px;
+      box-shadow:0 18px 35px rgba(0,0,0,0.1);
+    }
+
+    .btn-voltar {
+      display:inline-flex;
+      margin-top:20px;
+      padding:8px 26px;
+      border-radius:999px;
+      background:var(--btn-bg);
+      color:var(--white);
+      font-size:13px;
+      border:none;
+      cursor:pointer;
+    }
+
+    
+footer {
+  background-color: #f3e8dd;
+  padding: 20px 0 15px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* menor distância entre texto e ícones */
+}
+
+footer p {
+  color: #795e46;
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer-links {
+  display: inline-flex; /* garante alinhamento central */
+  justify-content: center;
+  align-items: center;
+  gap: 12px; /* espaço entre ícones */
+  line-height: 0; /* remove espaços verticais extras */
+}
+
+footer a img {
+  display: block;
+  width: 60px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+footer a img:hover {
+  transform: scale(1.12);
+}
+
+/* Ajuste individual dos ícones */
+footer a img[src*="logo_wpp"] {
+  width: 80px; /* ligeiro aumento */
+}
+
+footer a[href*="instagram"] img {
+  width: 49px;
+}
+
+
+
+footer p {
+  color: #795e46;
+  font-size: 14px;
+}
+
+    @media (max-width:900px) {
+      .package-layout {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="luxo á mesa.index.html"><img src="imgs/logo.png" alt="Do Luxo à Mesa"></a>
+      </div>
+      <nav class="main-nav">
+        <a href="luxo á mesa.index.html">Início</a>
+        <a href="quem somos.html">Quem somos</a>
+        <a href="index.html#servicos">Serviços</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="package-hero">
+    <div class="container">
+      <h1>Pacote Essence</h1>
+      <div class="price">€ 420,00</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container package-layout">
+      <div class="package-text">
+        <h2>O que está incluído</h2>
+        <p>• Buffet com <strong>180 peças de finger food gourmet</strong>, pensado para eventos intimistas.</p>
+        <p>• Louça premium decorativa, com a paleta suave e dourada da Do Luxo à Mesa.</p>
+        <p>• Montagem e disposição do buffet em mesa de 180 cm, com foco em elegância e equilíbrio visual.</p>
+        <p>• Ideal para celebrações de 18–20 convidados, como aniversários, jantares especiais e mini-eventos familiares.</p>
+
+        <a href="luxo á mesa.index.html" class="btn-voltar">Voltar aos serviços</a>
+      </div>
+
+      <div class="package-image">
+        <img src="imgs/pacote-essence.jpg" alt="Buffet Pacote Essence">
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Do Luxo á Mesa.</p>
+        <div class="footer-links">
+          <a href="https://www.facebook.com/profile.php?id=61582963936354" target="_blank">
+            <img src="imgs/logo_wpp.png" alt="WhatsApp" class="social-icon" />
+          </a>
+          <a href="https://www.instagram.com/doluxoamesa/" target="_blank">
+            <img src="imgs/logo_insta.png" alt="Instagram" class="social-icon" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

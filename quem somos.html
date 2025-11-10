@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quem Somos Nós | Do Luxo à Mesa</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-main: #f3e8dd;
+      --bg-card: #f0e2d3;
+      --gold: #c9a44e;
+      --gold-dark: #a58335;
+      --text-main: #5a4023;
+      --white: #ffffff;
+      --btn-bg: #7d5324;
+      --btn-bg-hover: #5c3e1b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Nunito", sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      background: linear-gradient(to bottom, #f7efe6 0%, #f3e8dd 100%);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+    }
+
+    .logo img {
+      height: 130px;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 32px;
+      font-size: 15px;
+    }
+
+    .main-nav a {
+      position: relative;
+      font-weight: 500;
+      color: #7b5531;
+    }
+
+    .main-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.2s ease;
+    }
+
+    .main-nav a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      margin-top: 90px;
+      height: 40vh;
+      background:#a58335;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero h1 {
+      position:relative;
+      font-family: "Playfair Display", serif;
+      font-size: 5rem;
+      color: var(--white);
+      z-index: 1;
+    }
+
+    /* SOBRE */
+    .about-section {
+      padding: 100px 0 80px;
+      background: var(--bg-main);
+    }
+
+    .about-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .about-text {
+      font-size: 15px;
+    }
+
+    .about-text h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.4rem;
+      color: var(--text-main);
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+    }
+
+    .about-image img {
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    /* MISSÃO / VALORES */
+    .mission {
+      background: #e8dbcd;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .mission h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      color: var(--gold-dark);
+      margin-bottom: 20px;
+    }
+
+    .mission p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 15px;
+    }
+
+ 
+footer {
+  background-color: #f3e8dd;
+  padding: 20px 0 15px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* menor distância entre texto e ícones */
+}
+
+footer p {
+  color: #795e46;
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer-links {
+  display: inline-flex; /* garante alinhamento central */
+  justify-content: center;
+  align-items: center;
+  gap: 12px; /* espaço entre ícones */
+  line-height: 0; /* remove espaços verticais extras */
+}
+
+footer a img {
+  display: block;
+  width: 60px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+footer a img:hover {
+  transform: scale(1.12);
+}
+
+/* Ajuste individual dos ícones */
+footer a img[src*="logo_wpp"] {
+  width: 80px; /* ligeiro aumento */
+}
+
+footer a[href*="instagram"] img {
+  width: 49px;
+}
+
+
+
+footer p {
+  color: #795e46;
+  font-size: 14px;
+}
+
+    @media (max-width: 900px) {
+      .about-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="luxo á mesa.index.html"><img src="imgs/logo.png" alt="Do Luxo à Mesa" /></a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="luxo á mesa.index.html">Início</a>
+        <a href="quem somos.html">Quem somos</a>
+        <a href="index.html#servicos">Serviços</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Quem Somos Nós</h1>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-wrapper">
+        <div class="about-text">
+          <h2>Elegância com propósito</h2>
+          <p>
+            A <strong>Do Luxo à Mesa</strong> nasceu da ideia de que o requinte não precisa estar ligado ao preço.
+            Criamos experiências elegantes e acessíveis, onde cada detalhe reflete bom gosto, sofisticação e equilíbrio —
+            porque acreditamos que o verdadeiro luxo está na forma de receber.
+          </p>
+          <p>
+            Desde pequenos eventos familiares a celebrações marcantes, cuidamos de todos os pormenores com atenção e
+            carinho, oferecendo um serviço visualmente encantador e gastronomicamente delicioso.
+          </p>
+          <p>
+            Trabalhamos com materiais de alta qualidade, design moderno e uma paleta de tons suaves e dourados,
+            refletindo a assinatura estética que caracteriza a nossa marca.
+          </p>
+        </div>
+
+        <div class="about-image">
+          <img src="imgs/sobre-nos.jpg" alt="Buffet elegante Do Luxo à Mesa" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSÃO -->
+  <section class="mission">
+    <div class="container">
+      <h2>A Nossa Missão</h2>
+      <p>
+        Tornar o luxo acessível e emocionalmente significativo. Queremos que cada evento seja uma experiência única,
+        onde o requinte encontra a simplicidade e onde cada convidado se sente valorizado.  
+        Acreditamos que o verdadeiro luxo está nos detalhes e na forma como se faz sentir quem recebe e quem é recebido.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Do Luxo á Mesa.</p>
+        <div class="footer-links">
+          <a href="https://www.facebook.com/profile.php?id=61582963936354" target="_blank">
+            <img src="imgs/logo_wpp.png" alt="WhatsApp" class="social-icon" />
+          </a>
+          <a href="https://www.instagram.com/doluxoamesa/" target="_blank">
+            <img src="imgs/logo_insta.png" alt="Instagram" class="social-icon" />
+          </a>
+        </div>
+      </div>
+    </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
