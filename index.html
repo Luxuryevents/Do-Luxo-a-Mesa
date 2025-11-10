@@ -20,44 +20,23 @@
       --btn-bg-hover: #5c3e1b;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
+      font-family: "Nunito", system-ui, sans-serif;
       background: var(--bg-main);
       color: var(--text-main);
       line-height: 1.6;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    img { max-width: 100%; display: block; }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    a { text-decoration: none; color: inherit; }
 
     /* HEADER */
-
     .site-header {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 10;
       background: linear-gradient(to bottom, #f7efe6 0%, #f3e8dd 100%);
       border-bottom: 1px solid rgba(0, 0, 0, 0.03);
@@ -70,15 +49,7 @@
       padding: 14px 24px;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo img {
-      height: 130px;
-    }
+    .logo img { height: 120px; }
 
     .main-nav {
       display: flex;
@@ -103,43 +74,34 @@
       transition: width 0.2s ease;
     }
 
-    .main-nav a:hover::after {
-      width: 100%;
-    }
+    .main-nav a:hover::after { width: 100%; }
 
     /* BOTÃO HAMBURGUER */
-
     .menu-toggle {
       display: none;
+      flex-direction: column;
+      justify-content: center;
       background: none;
       border: none;
-      padding: 8px;
       cursor: pointer;
+      gap: 5px;
     }
 
     .menu-toggle span {
       display: block;
-      width: 22px;
+      width: 25px;
       height: 2px;
       background: #7b5531;
-      margin: 4px 0;
+      transition: all 0.3s ease;
     }
 
     /* HERO */
-
     .hero {
       position: relative;
       margin-top: 90px;
       height: 80vh;
       min-height: 520px;
       overflow: hidden;
-    }
-
-    .hero-media {
-      position: absolute;
-      inset: 0;
-      background: url("hero-video-frame.jpg") center center / cover no-repeat;
-      width: 100%;
     }
 
     .hero video {
@@ -171,22 +133,13 @@
     .hero-title {
       font-family: "Playfair Display", serif;
       font-size: clamp(2.8rem, 4vw, 4rem);
-      letter-spacing: 0.08em;
-      text-transform: none;
       color: var(--white);
     }
 
     /* QUEM SOMOS */
-
     .about {
       padding: 100px 0 80px;
       background: #b0a498;
-    }
-
-    .about-wrapper {
-      display: flex;
-      justify-content: center;
-      padding: 0 24px;
     }
 
     .about-card {
@@ -194,6 +147,7 @@
       background: var(--bg-card);
       padding: 60px 70px;
       text-align: center;
+      margin: 0 auto;
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.03);
     }
 
@@ -204,10 +158,7 @@
       color: var(--text-main);
     }
 
-    .about-text {
-      font-size: 14px;
-      margin-bottom: 30px;
-    }
+    .about-text { font-size: 14px; margin-bottom: 30px; }
 
     .btn {
       display: inline-flex;
@@ -218,40 +169,31 @@
       background: var(--btn-bg);
       color: var(--white);
       font-size: 14px;
-      font-weight: 500;
       border: none;
       cursor: pointer;
-      transition: background 0.15s ease, transform 0.15s ease,
-        box-shadow 0.15s ease;
+      transition: background 0.2s;
     }
 
-    .btn:hover {
-      background: var(--btn-bg-hover);
-      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.18);
-      transform: translateY(-1px);
-    }
+    .btn:hover { background: var(--btn-bg-hover); }
 
     /* SERVIÇOS */
-
-    .services {
-      padding: 80px 0 90px;
-    }
-
-    .services-header {
-      margin-bottom: 40px;
-    }
+    .services { padding: 80px 0 90px; }
 
     .services-title {
       font-family: "Playfair Display", serif;
       font-size: 2.4rem;
       color: var(--gold-dark);
-      text-shadow: 0 0 1px rgba(201, 164, 78, 0.5);
+      text-align: center;
+      margin-bottom: 40px;
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     .service-card {
@@ -260,7 +202,6 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      border-radius: 0;
       cursor: pointer;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
@@ -275,39 +216,13 @@
       aspect-ratio: 4 / 3;
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
     }
 
-    .service-content {
-      padding: 22px 20px 26px;
-      font-size: 13px;
-    }
+    .service-content { padding: 22px 20px 26px; font-size: 13px; }
+    .service-name { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+    .service-price { color: var(--gold-dark); font-weight: 700; margin-bottom: 10px; }
 
-    .service-name {
-      font-weight: 600;
-      margin-bottom: 4px;
-      font-size: 14px;
-    }
-
-    .service-price {
-      font-size: 13px;
-      margin-bottom: 10px;
-      color: var(--gold-dark);
-      font-weight: 700;
-    }
-
-    .service-desc {
-      font-size: 12px;
-    }
-
-    .service-link {
-      display: block;
-      height: 100%;
-      color: inherit;
-    }
-
-    /* RODAPÉ */
-
+    /* FOOTER */
     footer {
       background-color: #f3e8dd;
       padding: 20px 0 15px;
@@ -318,14 +233,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       gap: 6px;
-    }
-
-    footer p {
-      color: #795e46;
-      font-size: 14px;
-      margin: 0;
     }
 
     .footer-links {
@@ -333,35 +241,17 @@
       justify-content: center;
       align-items: center;
       gap: 12px;
-      line-height: 0;
     }
 
     footer a img {
-      display: block;
       width: 60px;
-      height: auto;
       transition: transform 0.3s ease-in-out;
     }
 
-    footer a img:hover {
-      transform: scale(1.12);
-    }
-
-    footer a img[src*="logo_wpp"] {
-      width: 80px;
-    }
-
-    footer a[href*="instagram"] img {
-      width: 49px;
-    }
+    footer a img:hover { transform: scale(1.12); }
 
     /* RESPONSIVO */
-
     @media (max-width: 900px) {
-      .header-inner {
-        padding-inline: 16px;
-      }
-
       .main-nav {
         position: absolute;
         top: 100%;
@@ -379,33 +269,11 @@
       }
 
       .menu-toggle {
-        display: block;
-      }
-
-      .about-card {
-        padding: 40px 28px;
+        display: flex;
       }
 
       .services-grid {
         grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .hero {
-        height: 65vh;
-      }
-
-      .hero-title {
-        font-size: 2.2rem;
-      }
-
-      .site-header {
-        position: static;
-      }
-
-      .hero {
-        margin-top: 0;
       }
     }
   </style>
@@ -418,7 +286,6 @@
         <img src="logo.png" alt="Do Luxo à Mesa" />
       </div>
 
-      <!-- BOTÃO HAMBURGUER -->
       <button class="menu-toggle" aria-label="Abrir menu">
         <span></span>
         <span></span>
@@ -434,12 +301,9 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-media">
-      <video autoplay muted loop playsinline>
-        <source src="IMG_2432.MOV" type="video/mp4" />
-      </video>
-    </div>
-
+    <video autoplay muted loop playsinline>
+      <source src="IMG_2432.MOV" type="video/mp4" />
+    </video>
     <div class="hero-content">
       <h1 class="hero-title">Luxury Events</h1>
     </div>
@@ -447,94 +311,67 @@
 
   <!-- QUEM SOMOS -->
   <section id="quem-somos" class="about">
-    <div class="about-wrapper">
-      <div class="about-card">
-        <h2 class="section-title">Quem Somos Nós</h2>
-        <p class="about-text">
-          A Do Luxo à Mesa nasceu da ideia de que o requinte não precisa estar
-          ligado ao preço. Criamos experiências elegantes e acessíveis, onde
-          cada detalhe reflete bom gosto, sofisticação e equilíbrio &mdash;
-          porque o verdadeiro luxo está na forma de receber.
-        </p>
-        <a class="btn" href="quem somos.html">Saiba mais</a>
-      </div>
+    <div class="about-card">
+      <h2 class="section-title">Quem Somos Nós</h2>
+      <p class="about-text">
+        A Do Luxo à Mesa nasceu da ideia de que o requinte não precisa estar
+        ligado ao preço. Criamos experiências elegantes e acessíveis, onde
+        cada detalhe reflete bom gosto, sofisticação e equilíbrio &mdash;
+        porque o verdadeiro luxo está na forma de receber.
+      </p>
+      <a class="btn" href="quem somos.html">Saiba mais</a>
     </div>
   </section>
 
-  <!-- NOSSOS SERVIÇOS -->
+  <!-- SERVIÇOS -->
   <section id="servicos" class="services">
-    <div class="container">
-      <div class="services-header">
-        <h2 class="services-title">Nossos Serviços</h2>
-      </div>
+    <h2 class="services-title">Nossos Serviços</h2>
+    <div class="services-grid">
+      <article class="service-card">
+        <a href="pacote essence.html">
+          <div class="service-image" style="background-image:url('servico-essence.jpg');"></div>
+          <div class="service-content">
+            <h3 class="service-name">Pacote Essence</h3>
+            <div class="service-price">€ 420,00</div>
+            <p>Buffet de 180 peças de finger food gourmet, louça premium decorativa e montagem elegante.</p>
+          </div>
+        </a>
+      </article>
 
-      <div class="services-grid">
-        <!-- ESSENCE -->
-        <article class="service-card">
-          <a href="pacote essence.html" class="service-link">
-            <div class="service-image"
-                 style="background-image:url('servico-essence.jpg');"></div>
-            <div class="service-content">
-              <h3 class="service-name">Pacote Essence</h3>
-              <div class="service-price">€ 420,00</div>
-              <p class="service-desc">
-                Uma experiência elegante e prática. Inclui um buffet de 180 peças
-                de finger food gourmet, louça premium decorativa e apresentação
-                cuidada com toques sofisticados. Ideal para eventos intimistas,
-                mantendo o charme e o sabor em formato compacto.
-              </p>
-            </div>
-          </a>
-        </article>
+      <article class="service-card">
+        <a href="pacote supreme.html">
+          <div class="service-image" style="background-image:url('servico-supreme.jpg');"></div>
+          <div class="service-content">
+            <h3 class="service-name">Pacote Supreme</h3>
+            <div class="service-price">€ 680,00</div>
+            <p>Inclui 300 peças gourmet, bebidas de jarro e decoração harmonizada. Ideal para eventos médios.</p>
+          </div>
+        </a>
+      </article>
 
-        <!-- SUPREME -->
-        <article class="service-card">
-          <a href="pacote supreme.html" class="service-link">
-            <div class="service-image"
-                 style="background-image:url('servico-supreme.jpg');"></div>
-            <div class="service-content">
-              <h3 class="service-name">Pacote Supreme</h3>
-              <div class="service-price">€ 680,00</div>
-              <p class="service-desc">
-                Um buffet completo e impactante. Inclui 300 peças de finger food
-                gourmet, louça premium, bebidas de jarro e decoração harmonizada
-                com o ambiente. Perfeito para eventos de médio porte que exigem
-                mais quantidade, elegância e conveniência.
-              </p>
-            </div>
-          </a>
-        </article>
-
-        <!-- PREMIUM -->
-        <article class="service-card">
-          <a href="pacote premium.html" class="service-link">
-            <div class="service-image"
-                 style="background-image:url('servico-premium.jpg');"></div>
-            <div class="service-content">
-              <h3 class="service-name">Pacote Premium</h3>
-              <div class="service-price">€ 890,00</div>
-              <p class="service-desc">
-                O pacote de maior impacto. Inclui buffet de 360 cm com 500
-                peças gourmet, bebidas de jarro, gelo seco, máquina de faísca,
-                arranjos florais e dois elementos de staff.
-              </p>
-            </div>
-          </a>
-        </article>
-      </div>
+      <article class="service-card">
+        <a href="pacote premium.html">
+          <div class="service-image" style="background-image:url('servico-premium.jpg');"></div>
+          <div class="service-content">
+            <h3 class="service-name">Pacote Premium</h3>
+            <div class="service-price">€ 890,00</div>
+            <p>Buffet de 360 cm com 500 peças, bebidas, gelo seco, máquina de faísca, flores e 2 elementos de staff.</p>
+          </div>
+        </a>
+      </article>
     </div>
   </section>
 
   <!-- RODAPÉ -->
-  <footer class="footer">
+  <footer>
     <div class="footer-content">
-      <p>&copy; <span id="year"></span> Do Luxo á Mesa.</p>
+      <p>&copy; <span id="year"></span> Do Luxo à Mesa.</p>
       <div class="footer-links">
         <a href="https://www.facebook.com/profile.php?id=61582963936354" target="_blank">
-          <img src="logo_wpp.png" alt="WhatsApp" class="social-icon" />
+          <img src="logo_wpp.png" alt="WhatsApp" />
         </a>
         <a href="https://www.instagram.com/doluxoamesa/" target="_blank">
-          <img src="logo_insta.png" alt="Instagram" class="social-icon" />
+          <img src="logo_insta.png" alt="Instagram" />
         </a>
       </div>
     </div>
@@ -561,6 +398,3 @@
   </script>
 </body>
 </html>
-
-
-
