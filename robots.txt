@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://luxuryevents.github.io/Do-Luxo-a-Mesa/sitemap.xml
