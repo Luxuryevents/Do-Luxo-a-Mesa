@@ -363,7 +363,28 @@ footer p {
     </div>
   </footer>
 </body>
+<script>
+    // ano automático
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // menu hamburguer
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
+
+    menuToggle.addEventListener("click", () => {
+      mainNav.classList.toggle("is-open");
+    });
+
+    // fechar menu ao clicar num link
+    mainNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("is-open");
+      });
+    });
+  </script>
+</body>
 </html>
+
 
 
 
