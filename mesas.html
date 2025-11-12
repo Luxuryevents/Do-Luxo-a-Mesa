@@ -81,6 +81,17 @@
 
     .main-nav a:hover::after { width: 100%; }
 
+    /* BOTÃO HAMBÚRGUER */
+    .menu-toggle{
+      display:none;
+      background:transparent;
+      border:0;
+      font-size:28px;
+      color:#7b5531;
+      cursor:pointer;
+      line-height:1;
+    }
+
     /* HERO */
     .hero {
       position: relative;
@@ -195,64 +206,61 @@
     }
 
     /* RODAPÉ */
-   footer {
-  background-color: #f3e8dd;
-  padding: 20px 0 15px;
-  text-align: center;
-}
+    footer {
+      background-color: #f3e8dd;
+      padding: 20px 0 15px;
+      text-align: center;
+    }
 
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px; /* menor distância entre texto e ícones */
-}
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px; /* menor distância entre texto e ícones */
+    }
 
-footer p {
-  color: #795e46;
-  font-size: 14px;
-  margin: 0;
-}
+    footer p {
+      color: #795e46;
+      font-size: 14px;
+      margin: 0;
+    }
 
-.footer-links {
-  display: inline-flex; /* garante alinhamento central */
-  justify-content: center;
-  align-items: center;
-  gap: 12px; /* espaço entre ícones */
-  line-height: 0; /* remove espaços verticais extras */
-}
+    .footer-links {
+      display: inline-flex; /* garante alinhamento central */
+      justify-content: center;
+      align-items: center;
+      gap: 12px; /* espaço entre ícones */
+      line-height: 0; /* remove espaços verticais extras */
+    }
 
-footer a img {
-  display: block;
-  width: 60px;
-  height: auto;
-  transition: transform 0.3s ease-in-out;
-}
+    footer a img {
+      display: block;
+      width: 60px;
+      height: auto;
+      transition: transform 0.3s ease-in-out;
+    }
 
-footer a img:hover {
-  transform: scale(1.12);
-}
+    footer a img:hover {
+      transform: scale(1.12);
+    }
 
-/* Ajuste individual dos ícones */
-footer a img[src*="WhatsApp"] {
-  width: 80px; /* ligeiro aumento */
-}
+    /* Ajuste individual dos ícones */
+    footer a img[src*="WhatsApp"] {
+      width: 80px; /* ligeiro aumento */
+    }
 
-footer a[href*="instagram"] img {
-  width: 49px;
-}
+    footer a[href*="instagram"] img {
+      width: 49px;
+    }
 
+    footer p { color: #795e46; font-size: 14px; }
 
-
-footer p {
-  color: #795e46;
-  font-size: 14px;
-}
     @media (max-width: 900px) {
       .table-setup-grid { grid-template-columns: 1fr; }
     }
-     /* RESPONSIVO */
+
+    /* RESPONSIVO */
     @media (max-width: 900px) {
       .main-nav {
         position: absolute;
@@ -266,17 +274,9 @@ footer p {
         display: none;
       }
 
-      .main-nav.is-open {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
+      .main-nav.is-open { display: flex; }
+      .menu-toggle { display: flex; }
+      .services-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -286,6 +286,12 @@ footer p {
       <div class="logo">
         <img src="logo.png" alt="Do Luxo à Mesa" />
       </div>
+
+      <!-- botão hamburguer -->
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        &#9776;
+      </button>
+
       <nav class="main-nav">
         <a href="index.html">Início></a>
         <a href="quem somos.html">Quem somos</a>
@@ -346,7 +352,7 @@ footer p {
       </p>
 
       <div style="text-align:center; margin-top:25px;">
-         <a href="index.html#servicos"class="btn">Ver pacotes de buffet</a>
+         <a href="index.html#servicos" class="btn">Ver pacotes de buffet</a>
       </div>
     </div>
   </section>
@@ -362,34 +368,30 @@ footer p {
       </a>
     </div>
   </footer>
-</body>
-<script>
+
+  <script>
     // ano automático
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year") && (document.getElementById("year").textContent = new Date().getFullYear());
 
     // menu hamburguer
     const menuToggle = document.querySelector(".menu-toggle");
     const mainNav = document.querySelector(".main-nav");
 
-    menuToggle.addEventListener("click", () => {
-      mainNav.classList.toggle("is-open");
-    });
-
-    // fechar menu ao clicar num link
-    mainNav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        mainNav.classList.remove("is-open");
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener("click", () => {
+        mainNav.classList.toggle("is-open");
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
       });
-    });
+
+      // fechar menu ao clicar num link
+      mainNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          mainNav.classList.remove("is-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
